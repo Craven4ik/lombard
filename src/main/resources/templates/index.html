@@ -1,0 +1,580 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5" class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Venam - eCommerce HTML5 Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+		<!-- CSS here -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/flaticon.css">
+        <link rel="stylesheet" href="css/odometer.css">
+        <link rel="stylesheet" href="css/aos.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    </head>
+    <body>
+
+
+        <!-- preloader  -->
+        <div id="preloader">
+            <div id="ctn-preloader" class="ctn-preloader">
+                <div class="animation-preloader">
+                    <div class="spinner"></div>
+                    <div class="txt-loading">
+                        <span data-text-preloader="V" class="letters-loading">
+                            V
+                        </span>
+                        <span data-text-preloader="E" class="letters-loading">
+                            E
+                        </span>
+                        <span data-text-preloader="N" class="letters-loading">
+                            N
+                        </span>
+                        <span data-text-preloader="A" class="letters-loading">
+                            A
+                        </span>
+                        <span data-text-preloader="M" class="letters-loading">
+                            M
+                        </span>
+                    </div>
+                </div>
+                <div class="loader">
+                    <div class="row">
+                        <div class="col-3 loader-section section-left">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-left">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-right">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="col-3 loader-section section-right">
+                            <div class="bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- preloader end -->
+
+
+		<!-- Scroll-top -->
+        <button class="scroll-top scroll-to-target" data-target="html">
+            <i class="fas fa-angle-up"></i>
+        </button>
+        <!-- Scroll-top-end-->
+
+        <!-- header-area -->
+        <header class="header-style-two header-style-three">
+
+            <!-- header-top -->
+            <div class="header-top-area">
+                <div class="custom-container-two">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-7"></div>
+                        <div class="col-md-4 col-sm-5">
+                            <div class="header-top-right" sec:authorize="!isAuthenticated()">
+                                <ul>
+                                    <li>
+                                        <a href="/register"><i class="flaticon-user"></i>Register</a>
+                                        <span>or</span>
+                                        <a href="/login">Sign in</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header-top-right" sec:authorize="isAuthenticated()">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="flaticon-user" ></i></a>
+                                        <span sec:authentication="name"> </span>
+                                        <a href="/logout">Log out</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header-top-end -->
+
+            <!-- menu-area -->
+            <div id="sticky-header" class="main-header menu-area">
+                <div class="custom-container-two">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                            <div class="menu-wrap">
+                                <nav class="menu-nav show">
+                                    <div class="logo">
+                                        <a href="/index"><img src="img/logo/logo_red.png" alt="Logo"></a>
+                                    </div>
+                                    <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                        <ul class="navigation">
+                                            <li><a href="/index">Home</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="pages.html">PAGES</a></li>
+                                            <li><a href="blog.html">BLOG</a></li>
+                                            <li><a href="/cart">CART</a></li>
+                                            <li><a href="special.html">SPECIAL</a></li>
+                                            <li><a href="contact.html">contacts</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="header-action d-none d-md-block">
+                                        <ul>
+                                            <li class="header-shop-cart"><a href="/cart"><i class="flaticon-shopping-bag"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- Mobile Menu  -->
+                            <div class="mobile-menu">
+                                <div class="menu-backdrop"></div>
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+
+                                <nav class="menu-box">
+                                    <div class="nav-logo"><a href="/index"><img src="img/logo/white_logo.png" alt="" title=""></a>
+                                    </div>
+                                    <div class="menu-outer">
+                                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                    </div>
+                                    <div class="social-links">
+                                        <ul class="clearfix">
+                                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            <!-- End Mobile Menu -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- menu-area-end -->
+
+        </header>
+        <!-- header-area-end -->
+
+        <!-- main-area -->
+        <main>
+
+            <!-- slider-area -->
+            <section class="third-slider-area" data-background="img/slider/slider_bg.jpg">
+                <div class="custom-container-two">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="slider-active">
+                                <div class="single-slider slider-bg">
+                                    <div class="slider-content">
+                                        <h2 data-animation="fadeInUp" data-delay=".3s" style="color: black">The pawnshop works remotely only for the sale of things that have not been redeemed. To assess the value of your belongings, please contact: <span>Moscow, 11-Parkovaya 36</span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- slider-area-end -->
+
+            <!-- exclusive-collection-area -->
+            <section class="exclusive-collection pt-100 pb-55">
+                <div class="custom-container-two">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="section-title text-center mb-60">
+                                <span class="sub-title">exclusive collection</span>
+                                <h2 class="title">best selling products</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-3 col-md-4 col-sm-6" id="1">
+                            <div class="exclusive-item exclusive-item-three text-center mb-40">
+                                <div class="exclusive-item-thumb">
+                                    <a href="#">
+                                        <img src="img/items/item1.jpg" alt="">
+                                        <img class="overlay-product-thumb" src="img/items/item1.jpg" alt="">
+                                    </a>
+                                    <ul class="action" sec:authorize="isAuthenticated()">
+                                        <li><a href="/clear_item_1"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="/remove_item_1"><i class="bi bi-cart-dash"></i></a></li>
+                                        <li><a href="#"><i class="" th:text="${#authentication.getPrincipal().getItemCount(1)}"></i></a></li>
+                                        <li><a href="/add_item_1"><i class="bi bi-cart-plus"></i></a></li>
+                                    </ul>
+                                    <ul class="action" sec:authorize="!isAuthenticated()">
+                                        <li><a href="/login"><i class="fa fa-lock"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="exclusive-item-content">
+                                    <h5><a href="#">Silver ring</a></h5>
+                                    <div class="exclusive--item--price">
+                                        <span class="new-price">$15.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-sm-6" id="2">
+                            <div class="exclusive-item exclusive-item-three text-center mb-40">
+                                <div class="exclusive-item-thumb">
+                                    <a href="#">
+                                        <img src="img/items/item2.jpg" alt="">
+                                        <img class="overlay-product-thumb" src="img/items/item2.jpg" alt="">
+                                    </a>
+                                    <ul class="action" sec:authorize="isAuthenticated()">
+                                        <li><a href="/clear_item_2"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="/remove_item_2"><i class="bi bi-cart-dash"></i></a></li>
+                                        <li><a href="#"><i class="" th:text="${#authentication.getPrincipal().getItemCount(2)}"></i></a></li>
+                                        <li><a href="/add_item_2"><i class="bi bi-cart-plus"></i></a></li>
+                                    </ul>
+                                    <ul class="action" sec:authorize="!isAuthenticated()">
+                                        <li><a href="/login"><i class="fa fa-lock"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="exclusive-item-content">
+                                    <h5><a href="#">Gold earrings with cubic zirconia</a></h5>
+                                    <div class="exclusive--item--price">
+                                        <span class="new-price">$200.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-sm-6" id="3">
+                            <div class="exclusive-item exclusive-item-three text-center mb-40">
+                                <div class="exclusive-item-thumb">
+                                    <a href="#">
+                                        <img src="img/items/item3.jpg" alt="">
+                                        <img class="overlay-product-thumb" src="img/items/item3.jpg" alt="">
+                                    </a>
+                                    <ul class="action" sec:authorize="isAuthenticated()">
+                                        <li><a href="/clear_item_3"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="/remove_item_3"><i class="bi bi-cart-dash"></i></a></li>
+                                        <li><a href="#"><i class="" th:text="${#authentication.getPrincipal().getItemCount(3)}"></i></a></li>
+                                        <li><a href="/add_item_3"><i class="bi bi-cart-plus"></i></a></li>
+                                    </ul>
+                                    <ul class="action" sec:authorize="!isAuthenticated()">
+                                        <li><a href="/login"><i class="fa fa-lock"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="exclusive-item-content">
+                                    <h5><a href="#">Silver earrings with cubic zirconia</a></h5>
+                                    <div class="exclusive--item--price">
+                                        <span class="new-price">$25.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-sm-6" id="4">
+                            <div class="exclusive-item exclusive-item-three text-center mb-40">
+                                <div class="exclusive-item-thumb">
+                                    <a href="#">
+                                        <img src="img/items/item4.jpg" alt="">
+                                        <img class="overlay-product-thumb" src="img/items/item4.jpg" alt="">
+                                    </a>
+                                    <ul class="action" sec:authorize="isAuthenticated()">
+                                        <li><a href="/clear_item_4"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="/remove_item_4"><i class="bi bi-cart-dash"></i></a></li>
+                                        <li><a href="#"><i class="" th:text="${#authentication.getPrincipal().getItemCount(4)}"></i></a></li>
+                                        <li><a href="/add_item_4"><i class="bi bi-cart-plus"></i></a></li>
+                                    </ul>
+                                    <ul class="action" sec:authorize="!isAuthenticated()">
+                                        <li><a href="/login"><i class="fa fa-lock"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="exclusive-item-content">
+                                    <h5><a href="#">Silver ring with tanzanite</a></h5>
+                                    <div class="exclusive--item--price">
+                                        <span class="new-price">$45.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-sm-6" id="5">
+                            <div class="exclusive-item exclusive-item-three text-center mb-40">
+                                <div class="exclusive-item-thumb">
+                                    <a href="#">
+                                        <img src="img/items/item5.jpg" alt="">
+                                        <img class="overlay-product-thumb" src="img/items/item5.jpg" alt="">
+                                    </a>
+                                    <ul class="action" sec:authorize="isAuthenticated()">
+                                        <li><a href="/clear_item_5"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="/remove_item_5"><i class="bi bi-cart-dash"></i></a></li>
+                                        <li><a href="#"><i class="" th:text="${#authentication.getPrincipal().getItemCount(5)}"></i></a></li>
+                                        <li><a href="/add_item_5"><i class="bi bi-cart-plus"></i></a></li>
+                                    </ul>
+                                    <ul class="action" sec:authorize="!isAuthenticated()">
+                                        <li><a href="/login"><i class="fa fa-lock"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="exclusive-item-content">
+                                    <h5><a href="#">Rose gold cubic zirconia earrings</a></h5>
+                                    <div class="exclusive--item--price">
+                                        <span class="new-price">$95.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-sm-6" id="6">
+                            <div class="exclusive-item exclusive-item-three text-center mb-40">
+                                <div class="exclusive-item-thumb">
+                                    <a href="#">
+                                        <img src="img/items/item6.jpg" alt="">
+                                        <img class="overlay-product-thumb" src="img/items/item6.jpg" alt="">
+                                    </a>
+                                    <ul class="action" sec:authorize="isAuthenticated()">
+                                        <li><a href="/clear_item_6"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="/remove_item_6"><i class="bi bi-cart-dash"></i></a></li>
+                                        <li><a href="#"><i class="" th:text="${#authentication.getPrincipal().getItemCount(6)}"></i></a></li>
+                                        <li><a href="/add_item_6"><i class="bi bi-cart-plus"></i></a></li>
+                                    </ul>
+                                    <ul class="action" sec:authorize="!isAuthenticated()">
+                                        <li><a href="/login"><i class="fa fa-lock"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="exclusive-item-content">
+                                    <h5><a href="#">Silver ring with cubic zirconia</a></h5>
+                                    <div class="exclusive--item--price">
+                                        <span class="new-price">$20.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-sm-6" id="7">
+                            <div class="exclusive-item exclusive-item-three text-center mb-40">
+                                <div class="exclusive-item-thumb">
+                                    <a href="#">
+                                        <img src="img/items/item7.jpg" alt="">
+                                        <img class="overlay-product-thumb" src="img/items/item7.jpg" alt="">
+                                    </a>
+                                    <ul class="action" sec:authorize="isAuthenticated()">
+                                        <li><a href="/clear_item_7"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="/remove_item_7"><i class="bi bi-cart-dash"></i></a></li>
+                                        <li><a href="#"><i class="" th:text="${#authentication.getPrincipal().getItemCount(7)}"></i></a></li>
+                                        <li><a href="/add_item_7"><i class="bi bi-cart-plus"></i></a></li>
+                                    </ul>
+                                    <ul class="action" sec:authorize="!isAuthenticated()">
+                                        <li><a href="/login"><i class="fa fa-lock"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="exclusive-item-content">
+                                    <h5><a href="#">Earrings with cubic zirconia</a></h5>
+                                    <div class="exclusive--item--price">
+                                        <span class="new-price">$30.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-4 col-sm-6" id="8">
+                            <div class="exclusive-item exclusive-item-three text-center mb-40">
+                                <div class="exclusive-item-thumb">
+                                    <a href="#">
+                                        <img src="img/items/item8.jpg" alt="">
+                                        <img class="overlay-product-thumb" src="img/items/item8.jpg" alt="">
+                                    </a>
+                                    <ul class="action" sec:authorize="isAuthenticated()">
+                                        <li><a href="/clear_item_8"><i class="fa fa-trash"></i></a></li>
+                                        <li><a href="/remove_item_8"><i class="bi bi-cart-dash"></i></a></li>
+                                        <li><a href="#"><i class="" th:text="${#authentication.getPrincipal().getItemCount(8)}"></i></a></li>
+                                        <li><a href="/add_item_8"><i class="bi bi-cart-plus"></i></a></li>
+                                    </ul>
+                                    <ul class="action" sec:authorize="!isAuthenticated()">
+                                        <li><a href="/login"><i class="fa fa-lock"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="exclusive-item-content">
+                                    <h5><a href="#">Gold earrings with diamonds</a></h5>
+                                    <div class="exclusive--item--price">
+                                        <span class="new-price">$450.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- core-features -->
+            <section class="core-features-area core-features-style-two">
+                <div class="container">
+                    <div class="core-features-border">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="core-features-item mb-50">
+                                    <div class="core-features-icon">
+                                        <img src="img/icon/core_features01.png" alt="">
+                                    </div>
+                                    <div class="core-features-content">
+                                        <h6>Free Shipping On Over $ 50</h6>
+                                        <span>Agricultural mean crops livestock</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="core-features-item mb-50">
+                                    <div class="core-features-icon">
+                                        <img src="img/icon/core_features02.png" alt="">
+                                    </div>
+                                    <div class="core-features-content">
+                                        <h6>Membership Discount</h6>
+                                        <span>Only MemberAgricultural livestock</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="core-features-item mb-50">
+                                    <div class="core-features-icon">
+                                        <img src="img/icon/core_features03.png" alt="">
+                                    </div>
+                                    <div class="core-features-content">
+                                        <h6>Money Return</h6>
+                                        <span>30 days money back guarantee</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-sm-6">
+                                <div class="core-features-item mb-50">
+                                    <div class="core-features-icon">
+                                        <img src="img/icon/core_features04.png" alt="">
+                                    </div>
+                                    <div class="core-features-content">
+                                        <h6>Online Support</h6>
+                                        <span>30 days money back guarantee</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- core-features-end -->
+
+        </main>
+        <!-- main-area-end -->
+
+        <!-- footer-area -->
+        <footer class="footer-area footer-style-two">
+            <div class="footer-top pt-65 pb-25">
+                <div class="custom-container-two">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="footer-widget mb-50">
+                                <div class="footer-logo mb-30">
+                                    <a href="/index"><img src="img/logo/white_logo.png" alt=""></a>
+                                </div>
+                                <div class="footer-text mb-35">
+                                    <h5 class="call-us">Got Question? Call us 24/7</h5>
+                                    <h6 class="number">458-965-3224</h6>
+                                    <p>W898 RTower Stat, Suite 56 Brockland, CA 9622 United States</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-sm-6">
+                            <div class="footer-widget mb-50">
+                                <div class="fw-title mb-35">
+                                    <h5>Customer Service</h5>
+                                </div>
+                                <div class="fw-link">
+                                    <ul>
+                                        <li><a href="#">Help Center</a></li>
+                                        <li><a href="#">Returns</a></li>
+                                        <li><a href="#">Product Recalls</a></li>
+                                        <li><a href="#">Accessibility</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-sm-6">
+                            <div class="footer-widget mb-50">
+                                <div class="fw-title mb-35">
+                                    <h5>Our Stores</h5>
+                                </div>
+                                <div class="fw-link">
+                                    <ul>
+                                        <li><a href="#">New York</a></li>
+                                        <li><a href="#">London SF</a></li>
+                                        <li><a href="#">Cockfosters BP</a></li>
+                                        <li><a href="#">Los Angeles</a></li>
+                                        <li><a href="#">Chicago</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-sm-6">
+                            <div class="footer-widget mb-50">
+                                <div class="fw-title mb-35">
+                                    <h5>My Account</h5>
+                                </div>
+                                <div class="fw-link">
+                                    <ul>
+                                        <li><a href="#">My Account</a></li>
+                                        <li><a href="#">Discount</a></li>
+                                        <li><a href="#">Returns</a></li>
+                                        <li><a href="#">Orders History</a></li>
+                                        <li><a href="#">Order Tracking</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-wrap copyright-style-two">
+                <div class="custom-container-two">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="copyright-text">
+                                <p>Copyright © 2020 <a href="#">Venam</a> All Rights Reserved.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 d-none d-md-block">
+                            <div class="payment-method-img text-right">
+                                <img src="img/images/card_img.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-area-end -->
+
+
+
+
+
+		<!-- JS here -->
+        <script src="js/vendor/jquery-3.5.0.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/isotope.pkgd.min.js"></script>
+        <script src="js/imagesloaded.pkgd.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.odometer.min.js"></script>
+        <script src="js/jquery.countdown.min.js"></script>
+        <script src="js/jquery.appear.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/ajax-form.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
